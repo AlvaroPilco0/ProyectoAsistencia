@@ -17,7 +17,8 @@ using namespace std;
 bool validarNombre(const string& nombre) {
     return !nombre.empty();  // Retorna verdadero si el nombre no está vacío
 }
-
+void hola(){
+}
 // En el bucle principal de main():
 while (true) {
     cout << "Ingrese el nombre del estudiante ('fin' para salir): ";
