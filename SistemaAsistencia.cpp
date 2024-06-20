@@ -14,6 +14,24 @@ using namespace std;
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
+bool validarNombre(const string& nombre) {
+    return !nombre.empty();  // Retorna verdadero si el nombre no está vacío
+}
+
+// En el bucle principal de main():
+while (true) {
+    cout << "Ingrese el nombre del estudiante ('fin' para salir): ";
+    cin >> nombre;
+    if (nombre == "fin") {
+        break;
+    }
+    if (!validarNombre(nombre)) {
+        cout << RED << "Nombre no válido. Por favor, ingrese un nombre válido." << RESET << endl;
+        continue;
+    }
+    registrarAsistencia(nombre);
+}
+
 // Función para obtener la fecha y hora actual
 string getCurrentDateTime() {
     time_t now = time(0);
